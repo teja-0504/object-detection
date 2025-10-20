@@ -40,9 +40,9 @@ def camera():
     return render_template('camera.html')
 
 def generate_frames():
-    cap = cv2.VideoCapture(0)
+    cap = cv2.VideoCapture('/dev/video0')
     if not cap.isOpened():
-        print("Error: Could not open camera.")
+        print("Error: Could not open camera at /dev/video0.")
         return
 
     while True:
